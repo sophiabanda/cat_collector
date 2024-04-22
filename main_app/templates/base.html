@@ -12,13 +12,13 @@
 <body>
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
+      <div class="black nav-wrapper">
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Cat Collector</a></li>
+          <li><a href="{% url 'home'%}" class="left brand-logo">&nbsp;&nbsp;Cat Collector</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/cats">View All My Cats</a></li>
+          <li><a href="{% url 'about'%}">About</a></li>
+          <li><a href="{% url 'index'%}">View All My Cats</a></li>
         </ul>
       </div>
     </nav>
@@ -27,7 +27,7 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="page-footer">
+  <footer class="black page-footer">
     <div class="right">All Rights Reserved, &copy; 2021 Cat Collector &nbsp;</div>
   </footer>
 </body>
