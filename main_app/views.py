@@ -1,10 +1,5 @@
 from django.shortcuts import render
-
-#Temporary DB - Remove after adding cat model:
-cats = [
-    {'name': 'Lolo', 'breed': 'tabby', 'description': 'furry little demon', 'age': 3},
-    {'name': 'Sachi', 'breed': 'calico', 'description': 'gentle and loving', 'age': 2},
-]
+from .models import Cat
 
 # Create your views here.
 
@@ -15,6 +10,7 @@ def about(request):
     return render(request, 'about.html')
 
 def cats_index(request):
+    cats = Cat.objects.all()
     return render(request, 'cats/index.html', {
         'cats': cats
     })
