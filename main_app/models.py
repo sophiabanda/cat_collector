@@ -30,3 +30,6 @@ class Feeding(models.Model):
     return f'{self.get_meal_display()} on {self.date}'
   # get_xyz_display will return the values with the keys from our MEALS tuples
   # used on fields that contain choices
+
+  class Meta:
+    ordering = ('-date',)
