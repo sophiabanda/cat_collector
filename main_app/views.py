@@ -17,7 +17,6 @@ def cats_index(request):
     })
 
 def cats_detail(request, cat_id):
-    #We need to communiate with the DB here
     cat = Cat.objects.get(id=cat_id)
     return render(request, 'cats/detail.html', {
         'cat': cat
@@ -26,10 +25,13 @@ def cats_detail(request, cat_id):
 class CatCreate(CreateView):
     model = Cat
     fields = '__all__'
+    # When the template is rendered for this view it will need to know which fields to add. 
+    # This says "when you create this template, add all views"
 
 class CatUpdate(UpdateView):
     model = Cat
-    fields = ('description', 'age')
+    fields = ('name', 'description', 'age')
+    # using a tuple for more security and better performance?
 
 class CatDelete(DeleteView):
     model = Cat

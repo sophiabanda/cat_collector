@@ -10,7 +10,7 @@ class Cat(models.Model):
   def __str__(self):
     return self.name
     
-  # Add this method
   def get_absolute_url(self):
     return reverse('detail', kwargs={'cat_id': self.id})
-    
+    # Instance method, take reference to the instance
+    # 
