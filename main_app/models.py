@@ -4,7 +4,7 @@ from django.urls import reverse
 class Cat(models.Model):
   name = models.CharField(max_length=100)
   breed = models.CharField(max_length=100)
-  description = models.TextField(max_length=250)
+  description = models.TextField(max_length=350)
   age = models.IntegerField()
 
   def __str__(self):
