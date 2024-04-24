@@ -31,13 +31,13 @@ def add_feeding(request, cat_id):
     submitted_form = FeedingForm(request.POST) # this creates django's version of req.body
     # validate form input
     if submitted_form.is_valid():
-    # if form input is valid, we'll save an in-memory copy of the new feeding object
+        # if form input is valid, we'll save an in-memory copy of the new feeding object
         new_feeding = submitted_form.save(commit=False)
-    # attach the cat id to the in-memory object
+        # attach the cat id to the in-memory object
         new_feeding.cat_id = cat_id
-    # save completed feeding object in the database
+        # save completed feeding object in the database
         new_feeding.save()
-    # redirect back to the cat detail page
+        # redirect back to the cat detail page
     return redirect('detail', cat_id=cat_id)
 
 class CatCreate(CreateView):
