@@ -24,7 +24,7 @@ class Feeding(models.Model):
   meal = models.CharField(max_length=1, choices=MEALS)
   cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
   # takes the model its referencing and an on_delete argument
-  # 
+  # CASCADE will delete all the feedings if a cat is deleted
 
   def __str__(self):
     return f'{self.get_meal_display()} on {self.date}'
